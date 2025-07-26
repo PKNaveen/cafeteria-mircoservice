@@ -1,5 +1,6 @@
 package com.cafeteria.products.catalog.domain;
 
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -36,5 +37,9 @@ public class ProductService {
                 productsPage.hasNext(),
                 productsPage.hasPrevious(),
                 productsPage.getContent());
+    }
+
+    public Optional<Product> getProductByCode(String productCode) {
+        return productRepo.findByProductCode(productCode).map(ProductMapper::toProduct);
     }
 }
