@@ -7,6 +7,11 @@ on:
     branches:
       - '**'
 
+  pull_request:
+    paths:
+      - catalog-service/**
+    branches:
+      - '**'
 jobs:
   build:
     name: Build
