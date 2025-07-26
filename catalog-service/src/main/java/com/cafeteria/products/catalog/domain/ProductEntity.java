@@ -13,7 +13,7 @@ class ProductEntity {
 
     @Column(nullable = false, unique = true)
     @NotBlank(message = "Product code cannot be null")
-    private String product_code;
+    private String productCode;
 
     @Column(nullable = false, unique = true)
     @NotBlank(message = "Product name cannot be null")
@@ -37,7 +37,7 @@ class ProductEntity {
 
     public ProductEntity(
             String id,
-            String product_code,
+            String productCode,
             String product_name,
             String product_category,
             String product_price,
@@ -45,7 +45,7 @@ class ProductEntity {
             String product_description,
             String product_imageURL) {
         this.id = id;
-        this.product_code = product_code;
+        this.productCode = productCode;
         this.productName = product_name;
         this.product_category = product_category;
         this.product_price = product_price;
@@ -60,8 +60,8 @@ class ProductEntity {
         return id;
     }
 
-    public String getProduct_code() {
-        return product_code;
+    public String getProductCode() {
+        return productCode;
     }
 
     public String getProductName() {
@@ -92,8 +92,8 @@ class ProductEntity {
         this.id = id;
     }
 
-    public void setProduct_code(String product_code) {
-        this.product_code = product_code;
+    public void setProductCode(String product_code) {
+        this.productCode = product_code;
     }
 
     public void setProductName(String product_name) {
