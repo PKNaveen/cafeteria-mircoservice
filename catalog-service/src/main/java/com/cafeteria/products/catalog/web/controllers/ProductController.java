@@ -18,6 +18,7 @@ class ProductController {
         return productService.getProducts(pageNo);
     }
 
+
     @GetMapping("/{code}")
     ResponseEntity<Product> getProductByCode(@PathVariable("code") String code) {
         return productService
