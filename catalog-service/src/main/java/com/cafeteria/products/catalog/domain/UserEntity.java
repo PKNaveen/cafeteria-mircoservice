@@ -18,7 +18,7 @@ class UserEntity {
     private String userName;
 
     @Column(nullable = false, unique = true)
-    @NotBlank(message = "User email cannot be empty")
+    @NotBlank(message = "User email cannot be null")
     private String userEmail;
 
     @Column(nullable = false, unique = true)
