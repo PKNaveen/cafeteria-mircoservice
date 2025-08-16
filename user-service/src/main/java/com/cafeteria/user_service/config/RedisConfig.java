@@ -32,7 +32,9 @@ public class RedisConfig {
         CacheManager manager = provider.getCacheManager();
 
         // Create the cache backed by Redis
-        manager.createCache("bucket4j-cache", RedissonConfiguration.fromConfig(redissonConfig));
+        if (manager.getCache("bucket4j-cache") == null) {
+            manager.createCache("bucket4j-cache", RedissonConfiguration.fromConfig(redissonConfig));
+        }
         return manager;
     }
 

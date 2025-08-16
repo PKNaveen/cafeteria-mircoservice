@@ -5,16 +5,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.cafeteria.user_service.AbstractIT;
 import com.cafeteria.user_service.Records.UserRecords;
-
 import io.restassured.http.ContentType;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
-
 import org.springframework.test.context.jdbc.Sql;
 
 @Sql("/test-user-data.sql")
 public class UserControllerTest extends AbstractIT {
-
 
     @Test
     public void shouldReturnUserById() {
