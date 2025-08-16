@@ -1,8 +1,9 @@
-package com.cafeteria.products.catalog.domain;
+package com.cafeteria.user_service.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
@@ -11,7 +12,7 @@ class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String userId;
+    private UUID userId;
 
     @Column(nullable = false)
     @NotBlank(message = "User name cannot be null")
@@ -29,7 +30,7 @@ class UserEntity {
     @Column(name = "created_date", updatable = false, nullable = false)
     private LocalDateTime createdDate;
 
-    public UserEntity(String id, String userName, String userEmail, String imageUrl, LocalDateTime createdDate) {
+    public UserEntity(UUID id, String userName, String userEmail, String imageUrl, LocalDateTime createdDate) {
         this.userId = id;
         this.userName = userName;
         this.userEmail = userEmail;
@@ -39,11 +40,11 @@ class UserEntity {
 
     public UserEntity() {}
 
-    public String getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 

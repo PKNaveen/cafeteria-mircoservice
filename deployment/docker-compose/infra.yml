@@ -19,3 +19,13 @@ services:
       resources:
         limits:
           memory: 500m
+
+  user-service-redis:
+    image: redis:8.2-rc1-alpine
+    container_name: user-service-redis
+    ports:
+      - '6379:6379'
+    deploy:
+      resources:
+        limits:
+          memory: 500m
