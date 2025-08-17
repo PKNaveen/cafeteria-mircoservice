@@ -6,6 +6,8 @@ import io.github.bucket4j.BucketConfiguration;
 import io.github.bucket4j.Refill;
 import io.github.bucket4j.distributed.proxy.ProxyManager;
 import java.time.Duration;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +24,14 @@ public class RateLimiter {
 
     //    Bucket
 
-    public Bucket resolveBucket(String key, long limitPerMinute) {
-        Supplier<BucketConfiguration> configSupplier = getConfigSupplier(limitPerMinute);
-        return proxyManager.builder().build(key, configSupplier);
-    }
+    private final Map<String, Bucket> bucketCache = new ConcurrentHashMap<>();
 
+    public Bucket resolveBucket(String key, long limitPerMinute) {
+        return bucketCache.computeIfAbsent(key, k -> {
+            Supplier<BucketConfiguration> configSupplier = getConfigSupplier(limitPerMinute);
+            return proxyManager.builder().build(k, configSupplier);
+        });
+    }
     //    Bucket Refil
 
     private Supplier<BucketConfiguration> getConfigSupplier(long limitPerMinute) {
