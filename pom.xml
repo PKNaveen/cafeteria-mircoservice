@@ -19,6 +19,7 @@
             <modules>
                 <module>catalog-service</module>
                 <module>user-service</module>
+                <module>kafka-service</module>
             </modules>
             <build>
                 <plugins>
