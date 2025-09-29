@@ -1,10 +1,9 @@
 package com.cafeteria.user_service.domain;
 
 import com.cafeteria.user_service.Records.UserRecords;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Optional;
 import java.util.UUID;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +24,7 @@ public class UserService {
     @KafkaListener(topics = "userCreation", groupId = "user-service-group")
     public void consume(UserRecords userRecords) {
 
-//      Get message in json format under userRecords and map it to useEntity
+        //      Get message in json format under userRecords and map it to useEntity
         UserEntity userEntity = UserMapper.toEntity(userRecords);
         userRepo.save(userEntity);
     }

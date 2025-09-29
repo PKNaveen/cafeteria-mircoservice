@@ -8,9 +8,6 @@ import org.springframework.context.annotation.Import;
 @SpringBootTest
 class KafkaServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
-
+    @Test
+    void contextLoads() {}
 }

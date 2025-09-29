@@ -11,6 +11,7 @@ class UserMapper {
                 userEntity.getImageUrl(),
                 userEntity.getCreatedDate().toString());
     }
+
     public static UserEntity toEntity(final UserRecords dto) {
         UserEntity entity = new UserEntity();
         entity.setUserName(dto.userName());

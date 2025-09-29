@@ -10,16 +10,15 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 class TestcontainersConfiguration {
 
-	@Bean
-	@ServiceConnection
-	PostgreSQLContainer<?> postgresContainer() {
-		return new PostgreSQLContainer<>(DockerImageName.parse("postgres:17-alpine"));
-	}
+    @Bean
+    @ServiceConnection
+    PostgreSQLContainer<?> postgresContainer() {
+        return new PostgreSQLContainer<>(DockerImageName.parse("postgres:17-alpine"));
+    }
 
-	@Bean
-	@ServiceConnection
-	ConfluentKafkaContainer confluentKafkaContainer() {
-		return new ConfluentKafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.4.0"));
-	}
-
+    @Bean
+    @ServiceConnection
+    ConfluentKafkaContainer confluentKafkaContainer() {
+        return new ConfluentKafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.4.0"));
+    }
 }

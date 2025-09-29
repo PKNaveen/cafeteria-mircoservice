@@ -22,12 +22,12 @@ public class KafkaTopicController {
     }
 
     //    gets cart information from upstream in the following format
-//      {
-//      "userName": "TEXT",
-//      "userEmail": "TEXT",
-//      "imageUrl": "TEXT",
-//      "createdDate": "TEXT"
-//     }
+    //      {
+    //      "userName": "TEXT",
+    //      "userEmail": "TEXT",
+    //      "imageUrl": "TEXT",
+    //      "createdDate": "TEXT"
+    //     }
 
     @PostMapping("/request/send-user-details")
     public String sendUserDetails(@RequestBody UserDetails userDetails) {
@@ -35,19 +35,17 @@ public class KafkaTopicController {
         return "Message posted to topic in kafka";
     }
 
-//    gets cart information from upstream in the following format
-//      {
-//        "cart_id":"UUID",
-//        "user_id":"UUID",
-//        "product_code":"TEXT",
-//        "quantity":"Long"
-//      }
-
+    //    gets cart information from upstream in the following format
+    //      {
+    //        "cart_id":"UUID",
+    //        "user_id":"UUID",
+    //        "product_code":"TEXT",
+    //        "quantity":"Long"
+    //      }
 
     @PostMapping("/orders/creation-request")
     public String sendOrderCreationRequest(@RequestBody OrderDetails orderDetails) {
         orderService.sendOrder(orderDetails);
         return "Message posted to topic in kafka";
     }
-
 }

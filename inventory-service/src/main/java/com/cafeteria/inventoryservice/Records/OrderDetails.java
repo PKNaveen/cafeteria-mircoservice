@@ -9,7 +9,7 @@ public class OrderDetails {
     private String product_code;
     private Long quantity;
 
-    public OrderDetails(UUID cart_id, UUID user_id, String product_code , Long quantity) {
+    public OrderDetails(UUID cart_id, UUID user_id, String product_code, Long quantity) {
         this.cart_id = cart_id;
         this.user_id = user_id;
         this.product_code = product_code;
@@ -21,6 +21,7 @@ public class OrderDetails {
     public Long getQuantity() {
         return quantity;
     }
+
     public UUID getCart_id() {
         return cart_id;
     }
@@ -48,5 +49,4 @@ public class OrderDetails {
     public void setQuantity(Long quantity) {
         this.quantity = quantity;
     }
-
 }

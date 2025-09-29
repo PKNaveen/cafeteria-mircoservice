@@ -9,7 +9,6 @@ public class OrderDetails {
     private String product_code;
     private Long quantity;
 
-
     public OrderDetails(UUID cart_id, UUID user_id, String product_code, Long quantity) {
         this.cart_id = cart_id;
         this.user_id = user_id;

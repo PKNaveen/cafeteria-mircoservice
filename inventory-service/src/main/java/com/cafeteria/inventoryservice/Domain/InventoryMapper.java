@@ -1,7 +1,6 @@
 package com.cafeteria.inventoryservice.Domain;
 
 import com.cafeteria.inventoryservice.Records.OrderRecords;
-
 import java.util.UUID;
 
 class InventoryMapper {

@@ -9,5 +9,4 @@ public class CafeteriaGatewayApplication {
     public static void main(String[] args) {
         SpringApplication.run(CafeteriaGatewayApplication.class, args);
     }
-
 }

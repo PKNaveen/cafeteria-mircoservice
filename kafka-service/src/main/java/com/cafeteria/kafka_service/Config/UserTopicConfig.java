@@ -1,6 +1,5 @@
 package com.cafeteria.kafka_service.Config;
 
-
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +21,4 @@ public class UserTopicConfig {
     public NewTopic masterRoleTopic() {
         return new NewTopic("MasterRole", 1, (short) 1);
     }
-
-
 }
