@@ -14,16 +14,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class ProducerConfig {
+public class UserDetailsProducerConfig {
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
-//    ProducerFactory uses a key, value Hashmap to convert the data into byte arrays, byte arrays is the only method kafka understands to
+    //    ProducerFactory uses a key, value Hashmap to convert the data into byte arrays, byte arrays is the only method kafka understands to
 //    move messages. This is the same when JSON object is converted via serializers and through utf-8 byte arrays as below
     @Bean
     public ProducerFactory<String, UserDetails> producerFactory() {
-        Map<String,Object> props = new HashMap<>();
+        Map<String, Object> props = new HashMap<>();
         props.put("bootstrap.servers", bootstrapServers);
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", JsonSerializer.class);

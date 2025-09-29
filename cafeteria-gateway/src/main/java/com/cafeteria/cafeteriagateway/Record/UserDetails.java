@@ -4,10 +4,10 @@ import java.util.UUID;
 
 public class UserDetails {
 
-    private UUID transactionId = UUID.randomUUID();
+    private UUID userId = UUID.randomUUID();
     private String userName;
     private String userEmail;
-    private String imgUrl;
+    private String imageUrl;
     private String createdDate;
 
     public UserDetails() {
@@ -15,15 +15,15 @@ public class UserDetails {
     }
 
     public UserDetails(UUID transactionId, String userName, String userEmail, String imgUrl, String createdDate) {
-        this.transactionId = transactionId;
+        this.userId = transactionId;
         this.userName = userName;
         this.userEmail = userEmail;
-        this.imgUrl = imgUrl;
+        this.imageUrl = imgUrl;
         this.createdDate = createdDate;
     }
 
-    public UUID getTransactionId() {
-        return transactionId;
+    public UUID getUserId() {
+        return userId;
     }
 
     public String getUserName() {
@@ -34,16 +34,16 @@ public class UserDetails {
         return userEmail;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setTransactionId(UUID transactionId) {
-        this.transactionId = transactionId;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
     public void setUserName(String userName) {
@@ -54,8 +54,8 @@ public class UserDetails {
         this.userEmail = userEmail;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public void setCreatedDate(String createdDate) {

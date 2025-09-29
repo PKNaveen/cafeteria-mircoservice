@@ -11,4 +11,12 @@ class UserMapper {
                 userEntity.getImageUrl(),
                 userEntity.getCreatedDate().toString());
     }
+    public static UserEntity toEntity(final UserRecords dto) {
+        UserEntity entity = new UserEntity();
+        entity.setUserName(dto.userName());
+        entity.setUserEmail(dto.userEmail());
+        entity.setImageUrl(dto.imageUrl());
+        entity.setCreatedDate(java.time.LocalDateTime.parse(dto.createdDate()));
+        return entity;
+    }
 }

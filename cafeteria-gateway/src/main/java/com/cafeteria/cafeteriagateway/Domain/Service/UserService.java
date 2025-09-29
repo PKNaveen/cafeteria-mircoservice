@@ -1,4 +1,4 @@
-package com.cafeteria.cafeteriagateway.Domain;
+package com.cafeteria.cafeteriagateway.Domain.Service;
 
 import com.cafeteria.cafeteriagateway.Record.UserDetails;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -18,10 +18,10 @@ public class UserService {
     }
 
     public void sendMessage(UserDetails userDetails) {
-        if (userDetails.getTransactionId() == null) {
-            userDetails.setTransactionId(UUID.randomUUID());
+        if (userDetails.getUserId() == null) {
+            userDetails.setUserId(UUID.randomUUID());
         }
 
-        kafkaTemplate.send("userCreationTopic", userDetails);
+        kafkaTemplate.send("userCreation", userDetails);
     }
 }
