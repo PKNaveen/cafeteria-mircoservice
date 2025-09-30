@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OrderTopicConfig {
 
+    //    Topic creation for Order Service
+
     @Bean
     public NewTopic orderCreationTopic() {
         return new NewTopic("orderCreation", 1, (short) 1);
