@@ -41,6 +41,7 @@ public class KafkaTopicController {
     //        "user_id":"UUID",
     //        "product_code":"TEXT",
     //        "quantity":"Long"
+
     //      }
 
     @PostMapping("/orders/creation-request")
