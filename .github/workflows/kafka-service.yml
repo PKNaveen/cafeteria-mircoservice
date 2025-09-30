@@ -49,4 +49,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           ./mvnw spring-boot:build-image -DskipTests
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/cafeteria-user-service
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/cafeteria-kafka-service
