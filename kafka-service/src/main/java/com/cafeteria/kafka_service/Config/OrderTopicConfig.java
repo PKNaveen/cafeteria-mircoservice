@@ -31,6 +31,4 @@ public class OrderTopicConfig {
     public NewTopic paymentFailed() {
         return new NewTopic("paymentFailed", 1, (short) 1);
     }
-
-
 }

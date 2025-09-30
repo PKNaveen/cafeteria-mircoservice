@@ -36,12 +36,12 @@ public class KafkaTopicController {
     }
 
     //    gets cart information from upstream in the following format
+    //    POST reqeust
     //      {
     //        "cart_id":"UUID",
     //        "user_id":"UUID",
     //        "product_code":"TEXT",
     //        "quantity":"Long"
-
     //      }
 
     @PostMapping("/orders/creation-request")
