@@ -25,7 +25,7 @@ services:
       - DB_URL=jdbc:postgresql://catalog-db:5432/postgres
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
-      - KAFKA_BOOTSTRAP_SERVERS=localhost:9092
+      - BOOTSTRAP_SERVERS=cafeteria-service-kafka-1:9092
     ports:
       - "8083:8083"
     restart: unless-stopped
