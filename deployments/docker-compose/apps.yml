@@ -12,9 +12,23 @@ services:
     ports:
       - "8081:8081"
     restart: unless-stopped
-#    depends_on:
-#      catalog-db:
-#        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+  kafka-service:
+    image: naveenthuvana/cafeteria-kafka-service
+    container_name: kafka-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_URL=jdbc:postgresql://catalog-db:5432/postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - KAFKA_BOOTSTRAP_SERVERS=localhost:9092
+    ports:
+      - "8083:8083"
+    restart: unless-stopped
     deploy:
       resources:
         limits:
